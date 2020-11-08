@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASTElement.cs" />
+    <Compile Include="CNodeType.cs" />
+    <Compile Include="SimpleCalcType.cs" />
     <Compile Include="STPrinter.cs" />
     <None Include="bin\Debug\test.dot" />
     <None Include="obj\Debug\SimpleCalcLexer.cs" />
