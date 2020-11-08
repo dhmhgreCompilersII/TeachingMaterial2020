@@ -1,7 +1,7 @@
 parser grammar SimpleCalcParser;
 
-@option {
-        tokenVocab = SimpleCalcLexer;
+options {
+    tokenVocab = SimpleCalcLexer;
 }
 
 /*
@@ -12,10 +12,10 @@ compileUnit
 	:	( expr SEMICOLON )+
 	;
 
-expr : NUMBER				#ExprNUMBER
-	 | VARIABLE				#ExprVARIABLE
-	 | VARIABLE ASSIGN expr	#ExprAssignment
-	 | LP expr RP			#ExprParenthesis
-	 | expr op=(MULT|DIV) expr	#ExprMulDiv
+expr : NUMBER						#ExprNUMBER
+	 | VARIABLE						#ExprVARIABLE
+	 | VARIABLE ASSIGN expr			#ExprAssignment
+	 | LP expr RP					#ExprParenthesis
+	 | expr op=(MULT|DIV) expr		#ExprMulDiv
 	 | expr op=(PLUS|MINUS) expr	#ExprAddSub
 	;
