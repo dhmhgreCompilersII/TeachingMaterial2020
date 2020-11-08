@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="STPrinter.cs" />
+    <None Include="bin\Debug\test.dot" />
     <None Include="obj\Debug\SimpleCalcLexer.cs" />
     <None Include="obj\Debug\SimpleCalcParser.cs" />
     <None Include="obj\Debug\SimpleCalcParserBaseListener.cs" />
@@ -77,6 +79,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\test.gif" />
     <Content Include="bin\Debug\test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,6 +18,9 @@ namespace TeachingMaterial {
             SimpleCalcParser parser = new SimpleCalcParser(tokens);
             IParseTree tree = parser.compileUnit();
             Console.WriteLine(tree.ToStringTree());
+
+            STPrinter stPrinter = new STPrinter();
+            stPrinter.Visit(tree);
         }
     }
 }
