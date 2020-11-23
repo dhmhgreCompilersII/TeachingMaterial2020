@@ -49,7 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASTBaseVisitor.cs" />
     <Compile Include="ASTElement.cs" />
+    <Compile Include="ASTGenerator.cs" />
+    <Compile Include="ASTPrinterVisitor.cs" />
     <Compile Include="CNodeType.cs" />
     <Compile Include="SimpleCalcType.cs" />
     <Compile Include="STPrinter.cs" />

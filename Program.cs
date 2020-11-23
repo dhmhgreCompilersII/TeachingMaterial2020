@@ -21,6 +21,12 @@ namespace TeachingMaterial {
 
             STPrinter stPrinter = new STPrinter();
             stPrinter.Visit(tree);
+
+            ASTGenerator astgen =new ASTGenerator();
+            astgen.Visit(tree);
+
+            ASTPrinterVisitor astPrinter = new ASTPrinterVisitor();
+            astPrinter.Visit(astgen.M_Root);
         }
     }
 }

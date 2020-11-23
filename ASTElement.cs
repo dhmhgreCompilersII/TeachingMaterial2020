@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TeachingMaterial {
-    public class ASTElement {
+    public abstract class ASTElement {
         private List<ASTElement>[] m_children=null;
         private ASTElement m_parent;
         private int m_serial;
@@ -15,6 +15,14 @@ namespace TeachingMaterial {
         public ASTElement M_Parent => m_parent;
 
         public string M_Name => m_name;
+
+        public IEnumerable<ASTElement> GetChildren() {
+            for (int i = 0; i < m_children.Length; i++) {
+                foreach (ASTElement element in m_children[i]) {
+                    yield return element;
+                }
+            }
+        }
 
         protected ASTElement(int context) {
             m_serial = m_seriarCounter++;
@@ -27,6 +35,7 @@ namespace TeachingMaterial {
             }
         }
 
+        public abstract T Accept<T>(ASTBaseVisitor<T> visitor);
 
         public void AddChild(ASTElement child, int contextIndex) {
             m_children[contextIndex].Add(child);
